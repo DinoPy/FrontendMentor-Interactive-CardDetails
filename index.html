@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="cardBack">
+        <p class="cardCVV">000</p>
+      </div>
+      <div class="cardFront">
+        <img src="./images/card-logo.svg" alt="card-logo" class="card-logo" />
+        <h3 class="cardNumber">0000 0000 0000 0000</h3>
+        <p class="cardName">Jane Appleseed</p>
+        <p class="cardExpDate">
+          <span class="cardMonth">00</span>/<span class="cardYear">00</span>
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <form id="cardForm">
+        <label for="cardName" class="cardHolderNameLabel">
+          Cardholder Name</label
+        >
+        <input
+          type="text"
+          name="cardName"
+          id="cardName"
+          placeholder="e.g. Jane Appleseed"
+          maxlength="20"
+          pattern="[a-zA-Z ]{1,20}"
+          title="Cardholder Name"
+          required
+        />
+
+        <label for="cardNumber" class="cardHolderNumberLabel">
+          Cardholder Number</label
+        >
+        <input
+          type="text"
+          name="cardNumber"
+          id="cardNumber"
+          placeholder="e.g.
+        1234 4567 1234 0000"
+          maxlength="16"
+          pattern="\d{16}"
+          title="Card number"
+          required
+        />
+        <div class="exp-cvv-container">
+          <div class="exp-container">
+            <div>
+              <label for="cardMonth">exp. date</label>
+              <label for="cardYear">(MM/YY)</label>
+            </div>
+            <div>
+              <input
+                placeholder="MM"
+                name="Month"
+                id="cardMonth"
+                maxlength="2"
+                pattern="(0[1-9]|1[0-2])"
+                title="Expiry month"
+                required
+              />
+              <input
+                placeholder="YY"
+                name="Year"
+                id="cardYear"
+                maxlength="2"
+                pattern="[0-9]{2}"
+                title="Expiry year"
+                required
+              />
+            </div>
+          </div>
+          <div class="cvc-container">
+            <label for="CVC">CVC</label>
+            <input
+              placeholder="e.g. 123"
+              name="CVC"
+              id="cardCVC"
+              maxlength="3"
+              pattern="[0-9]{3}"
+              title="CVC"
+              required
+            />
+          </div>
+        </div>
+
+        <button id="confirmButton" type="submit">Confirm</button>
+      </form>
+      <br />
+      <br />
+      <br />
+      <br />
+    </main>
+
+    <!-- Completed state start -->
+
+    <!-- Thank you! We've added your card details Continue -->
+
+    <script src="index.js" type="module"></script>
+  </body>
+</html>

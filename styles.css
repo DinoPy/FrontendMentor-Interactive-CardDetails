@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: "Space Grotesk", sans-serif;
+
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin: 0.5em 0 1em;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  border: 1px solid lightgray;
+
+  font-size: 1.2rem;
+  font-family: inherit;
+  color: hsl(270, 3%, 87%);
+  overflow: hidden;
+}
+
+input::placeholder {
+  color: hsl(270, 3%, 87%);
+}
+
+input:focus {
+  border: 1px solid red;
+  border-image: linear-gradient(
+    to right,
+    hsl(249 99% 64%),
+    hsl(278 94% 30%)
+  ) !important;
+  border-image-slice: 1 !important;
+  outline: none;
+}
+
+input:invalid:focus {
+  border: 1px solid hsl(0, 100%, 66%);
+}
+
+input:invalid {
+  border: 1px solid hsl(0, 100%, 66%);
+}
+
+label {
+  letter-spacing: 0.1em;
+  font-size: 0.9em;
+}
+
+main {
+  padding: 1em;
+  margin-top: 4em;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+button {
+  cursor: pointer;
+  transition: ease-in 0.2s;
+}
+
+button:hover {
+  transform: scale(105%);
+}
+
+.header {
+  background-image: url("./images/bg-main-mobile.png");
+  background-size: cover;
+  font-size: 16px;
+  height: 35vh;
+}
+
+.cardBack,
+.cardFront {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  width: 18em;
+  aspect-ratio: 16/9;
+  border-radius: 0.5em;
+}
+
+.cardBack {
+  background-image: url("./images/bg-card-back.png");
+  position: absolute;
+  right: 5%;
+  top: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardCVV {
+  color: white;
+  font-size: 0.7rem;
+  margin-left: 12rem;
+}
+
+.cardFront {
+  background-image: url("./images/bg-card-front.png");
+
+  display: grid;
+  grid-template-areas: "logo logo" "empty empty" "empty empty" "cardno cardno" "cardname cardexp";
+  align-items: end;
+
+  margin: 0 3em 3em 5%;
+  padding: 1em;
+
+  color: white;
+  letter-spacing: 0.1em;
+
+  position: relative;
+  bottom: -7.4rem;
+
+  box-shadow: 10px 50px 20px 2px rgba(0, 0, 0, 0.06);
+}
+
+.card-logo {
+  grid-area: logo;
+  width: 50px;
+}
+
+.cardNumber {
+  grid-area: cardno;
+  align-self: center;
+}
+
+.cardName,
+.cardExpDate {
+  font-size: 0.7em;
+  align-self: center;
+}
+
+.cardName {
+  grid-area: cardname;
+  text-transform: uppercase;
+}
+
+.cardExpDate {
+  grid-area: cardexp;
+  text-align: right;
+}
+
+.cardHolderNameLabel,
+.cardHolderNumberLabel {
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#cardNumber,
+#cardName {
+  width: 100%;
+}
+
+.exp-cvv-container {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.exp-cvv-container label {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.exp-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+#cardMonth,
+#cardYear {
+  width: 41%;
+}
+
+#cardCVC {
+  width: 100%;
+}
+
+#confirmButton {
+  background: hsl(278, 68%, 11%);
+  width: 100%;
+  margin-top: 1em;
+  padding: 1em;
+  border: none;
+  border-radius: 0.6em;
+
+  color: white;
+  font-weight: bold;
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: 0.1em;
+}
+
+.success-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+  height: 50vh;
+}
+
+.checkmark {
+  width: 25%;
+  margin-bottom: 1em;
+  fill: url(#MyGradient);
+}
+
+.success-title {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.success-detail {
+  color: darkgray;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.success-button {
+  background: hsl(278, 68%, 11%);
+  width: 100%;
+  margin-top: 1em;
+  padding: 1.4em 1em;
+  border: none;
+  border-radius: 0.6em;
+
+  color: white;
+  font-weight: bold;
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: 0.1em;
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    display: grid;
+    grid-template-columns: 30% minmax(400px, 1fr);
+    height: 100vh;
+  }
+
+  main {
+    height: 40%;
+    min-width: 40%;
+    max-width: 45%;
+    margin: auto auto;
+  }
+
+  .header {
+    background-image: url("./images/bg-main-desktop.png");
+    background-size: cover;
+    background-repeat: repeat;
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-logo {
+    position: relative;
+    top: -1em;
+  }
+
+  .cardBack,
+  .cardFront {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: unset;
+
+    width: 25rem;
+    aspect-ratio: 16/9;
+    border-radius: 0.5em;
+    box-shadow: 2em 2em 3em 5px rgba(0, 0, 0, 0.1),
+      inset 5px -10px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .cardBack {
+    order: 1;
+    transform: translateX(50%);
+  }
+
+  .cardFront {
+    order: 0;
+    transform: translateX(40%);
+  }
+
+  .cardCVV {
+    margin-left: 16rem;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 1000px) {
+  main {
+    margin: 2em auto;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  main {
+    margin: auto 0 auto 17rem;
+  }
+
+  .cardBack,
+  .cardFront {
+    width: 20rem;
+  }
+
+  .cardCVV {
+    margin-left: 12rem;
+  }
+}
