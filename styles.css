@@ -56,10 +56,19 @@ input:focus {
 
 input:invalid:focus {
   border: 1px solid hsl(0, 100%, 66%);
+  animation: shake 300ms;
 }
 
-input:invalid {
-  border: 1px solid hsl(0, 100%, 66%);
+@keyframes shake {
+  25% {
+    transform: translateX(4px);
+  }
+  50% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
 }
 
 label {
